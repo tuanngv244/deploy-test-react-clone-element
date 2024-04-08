@@ -27,6 +27,7 @@ const TabHeader = ({ children }) => {
 	return (
 		<ul className="nav nav-pills justify-content-center" role="tablist">
 			{React.Children.map(children, (child, index) => {
+				console.log("View 💕->child ", child);
 				if (child?.type === TabHeaderItem) {
 					return React.cloneElement(child, {
 						isActive: activeIndex == index,
@@ -62,6 +63,8 @@ const TabContent = ({ children }) => {
 	return (
 		<div className="tab-content">
 			{React.Children.map(children, (child, index) => {
+				console.log("View 💕->child ", child);
+				console.log("View 💕->TabContentItem ", TabContentItem);
 				if (child?.type === TabContentItem) {
 					return React.cloneElement(child, {
 						isActive: activeIndex == index,
